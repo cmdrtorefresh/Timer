@@ -20,14 +20,17 @@
     
     self.CartoonTitle.font = [UIFont fontWithName:@"From Cartoon Blocks" size:100];
     
-    
     self.TimerTitle.font = [UIFont fontWithName:@"From Cartoon Blocks" size:100];
     
-    self.Label.font = [UIFont fontWithName:@"From Cartoon Blocks" size:70];
+    self.Label.font = [UIFont fontWithName:@"From Cartoon Blocks" size:63];
     
     self.Label.textColor = [UIColor redColor];
     
-    countInt = 0;
+    self.Label.text = @"0:00:00.0";
+    
+    accumTime = 0;
+    
+    reset = true;
     
 }
 
@@ -38,49 +41,47 @@
 
 - (IBAction)startCount:(id)sender {
     
+    reset = false;
+    startTime = [NSDate timeIntervalSinceReferenceDate];
     [self renderLabel];
-    
-    timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(countTimer) userInfo:nil repeats:YES];
     
 }
 
 - (IBAction)resetCount:(id)sender {
     
-    countInt = 0;
-    second = countInt / 100;
-    hundredth = 0;
-    minute = second / 60;
-    hour = minute / 60;
-
-    [timer invalidate];
-
+    elapsedTime = 0;
+    accumTime = 0;
+    
     [self renderLabel];
+    reset = true;
     
 }
 
 - (IBAction)stopCount:(id)sender {
-    
-    [timer invalidate];
-    
+    if (reset == false){
+        [self calculateTime];
+        [self renderLabel];
+    } else {
+        [self renderLabel];
+    }
 }
 
-- (void)countTimer {
-    
-    countInt += 1;
-    second = countInt / 100;
-    hundredth = countInt % 100;
-    minute = second / 60;
-    hour = minute / 60;
-    [self renderLabel];
-    
+
+-(void)calculateTime {
+    currentTime = [NSDate timeIntervalSinceReferenceDate];
+    elapsedTime = currentTime - startTime;
+    accumTime += elapsedTime;
 }
 
 
 - (void)renderLabel {
     
-    self.Label.text = [NSString stringWithFormat:@"%i:%02i:%02i", hour, minute % 60, second % 60];
+    second = accumTime;
+    minute = second / 60;
+    hour = minute / 60;
     
-    self.FastCount.text = [NSString stringWithFormat:@"%2i", hundredth];
+    self.Label.text = [NSString stringWithFormat: @"%i:%02i:%02i.%.0f", hour, minute % 60, second % 60, 100*(accumTime - second)];
+//    self.FastCount.text = [NSString stringWithFormat:@"%.0f", 100*(accumTime - second)];
     
 }
 

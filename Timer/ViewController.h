@@ -10,12 +10,13 @@
 
 @interface ViewController : UIViewController {
 
-    NSTimer *timer;
-    int countInt;
+    BOOL reset;
     int hundredth;
     int second;
     int minute;
     int hour;
+    NSTimeInterval startTime, currentTime, elapsedTime,
+        accumTime;
     
 }
 @property (weak, nonatomic) IBOutlet UILabel *CartoonTitle;
