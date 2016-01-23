@@ -90,8 +90,8 @@
     hour = minute / 60;
     
     
-    self.Label.text = [NSString stringWithFormat: @"%i:%02i:%02i.%.0f", hour, minute % 60, second % 60, 100*((accumTime + elapsedTime) - second)];
-//    self.FastCount.text = [NSString stringWithFormat:@"%.0f", 100*(accumTime - second)];
+    self.Label.text = [NSString stringWithFormat: @"%i:%02i:%02i", hour, minute % 60, second % 60];
+    self.FastCount.text = [NSString stringWithFormat:@"%.0f", 100*((accumTime + elapsedTime) - second)];
     
 }
 
