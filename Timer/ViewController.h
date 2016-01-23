@@ -17,6 +17,7 @@
     int hour;
     NSTimeInterval startTime, currentTime, elapsedTime,
         accumTime;
+    NSTimer *timer;
     
 }
 @property (weak, nonatomic) IBOutlet UILabel *CartoonTitle;

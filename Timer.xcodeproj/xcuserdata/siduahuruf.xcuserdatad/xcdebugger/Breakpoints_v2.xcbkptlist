@@ -10,13 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Timer/ViewController.m"
-            timestampString = "475207229.237479"
+            timestampString = "475269704.733172"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "-countTimer"
-            landmarkType = "5">
+            startingLineNumber = "110"
+            endingLineNumber = "110">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

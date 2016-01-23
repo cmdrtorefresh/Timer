@@ -42,13 +42,16 @@
 - (IBAction)startCount:(id)sender {
     
     reset = false;
+    
     startTime = [NSDate timeIntervalSinceReferenceDate];
-    [self renderLabel];
+    
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(renderRunningTime) userInfo:NULL repeats:YES];
     
 }
 
 - (IBAction)resetCount:(id)sender {
     
+    [timer invalidate];
     elapsedTime = 0;
     accumTime = 0;
     
@@ -59,28 +62,35 @@
 
 - (IBAction)stopCount:(id)sender {
     if (reset == false){
-        [self calculateTime];
-        [self renderLabel];
+        [timer invalidate];
+        [self renderRunningTime];
+        accumTime += elapsedTime;
+        
     } else {
         [self renderLabel];
     }
 }
 
 
--(void)calculateTime {
+- (void)renderRunningTime {
+    [self calculateTime];
+    [self renderLabel];
+}
+
+- (void)calculateTime {
     currentTime = [NSDate timeIntervalSinceReferenceDate];
     elapsedTime = currentTime - startTime;
-    accumTime += elapsedTime;
 }
 
 
 - (void)renderLabel {
     
-    second = accumTime;
+    second = accumTime + elapsedTime;
     minute = second / 60;
     hour = minute / 60;
     
-    self.Label.text = [NSString stringWithFormat: @"%i:%02i:%02i.%.0f", hour, minute % 60, second % 60, 100*(accumTime - second)];
+    
+    self.Label.text = [NSString stringWithFormat: @"%i:%02i:%02i.%.0f", hour, minute % 60, second % 60, 100*((accumTime + elapsedTime) - second)];
 //    self.FastCount.text = [NSString stringWithFormat:@"%.0f", 100*(accumTime - second)];
     
 }
