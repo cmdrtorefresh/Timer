@@ -78,19 +78,7 @@
 
 - (void)renderLabel {
     
-    if (second%60 < 10){
-        if (minute%60 < 10){
-            self.Label.text = [NSString stringWithFormat:@"%2i:0%i:0%i", hour, minute%60, second%60];
-        } else {
-            self.Label.text = [NSString stringWithFormat:@"%2i:%2i:0%i", hour, minute%60, second%60];
-        }
-    } else {
-        if (minute%60 < 10){
-            self.Label.text = [NSString stringWithFormat:@"%2i:0%i:%2i", hour, minute%60, second%60];
-        } else {
-            self.Label.text = [NSString stringWithFormat:@"%2i:%2i:%2i", hour, minute%60, second%60];
-        }
-    }
+    self.Label.text = [NSString stringWithFormat:@"%i:%02i:%02i", hour, minute % 60, second % 60];
     
     self.FastCount.text = [NSString stringWithFormat:@"%2i", hundredth];
     
