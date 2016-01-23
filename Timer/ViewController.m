@@ -38,19 +38,7 @@
 
 - (IBAction)startCount:(id)sender {
     
-    if (second%60 < 10){
-        if (minute%60 < 10){
-            self.Label.text = [NSString stringWithFormat:@"%2i:0%i:0%i", hour, minute%60, second%60];
-        } else {
-            self.Label.text = [NSString stringWithFormat:@"%2i:%2i:0%i", hour, minute%60, second%60];
-        }
-    } else {
-        if (minute%60 < 10){
-            self.Label.text = [NSString stringWithFormat:@"%2i:0%i:%2i", hour, minute%60, second%60];
-        } else {
-            self.Label.text = [NSString stringWithFormat:@"%2i:%2i:%2i", hour, minute%60, second%60];
-        }
-    }
+    [self renderLabel];
     
     timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(countTimer) userInfo:nil repeats:YES];
     
@@ -66,21 +54,7 @@
 
     [timer invalidate];
 
-    if (second%60 < 10){
-        if (minute%60 < 10){
-            self.Label.text = [NSString stringWithFormat:@"%2i:0%i:0%i", hour, minute%60, second%60];
-        } else {
-            self.Label.text = [NSString stringWithFormat:@"%2i:%2i:0%i", hour, minute%60, second%60];
-        }
-    } else {
-        if (minute%60 < 10){
-            self.Label.text = [NSString stringWithFormat:@"%2i:0%i:%2i", hour, minute%60, second%60];
-        } else {
-            self.Label.text = [NSString stringWithFormat:@"%2i:%2i:%2i", hour, minute%60, second%60];
-        }
-    }
-    
-    self.FastCount.text = [NSString stringWithFormat:@"%2i", hundredth];
+    [self renderLabel];
     
 }
 
@@ -97,6 +71,12 @@
     hundredth = countInt % 100;
     minute = second / 60;
     hour = minute / 60;
+    [self renderLabel];
+    
+}
+
+
+- (void)renderLabel {
     
     if (second%60 < 10){
         if (minute%60 < 10){
@@ -115,4 +95,6 @@
     self.FastCount.text = [NSString stringWithFormat:@"%2i", hundredth];
     
 }
+
+
 @end
