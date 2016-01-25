@@ -26,12 +26,13 @@
     
     self.Label.textColor = [UIColor redColor];
     
-    self.Label.text = @"0:00:00.0";
+    self.Label.text = @"0:00:00";
     
     accumTime = 0;
     
     reset = true;
     
+    running = false;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,14 +41,38 @@
 }
 
 - (IBAction)startCount:(id)sender {
+    if (running == true) {
+        [self stopTimer];
+        [sender setTitle:@"Start" forState:UIControlStateNormal];
+    } else {
+        [self startTimer];
+        [sender setTitle:@"Stop" forState:UIControlStateNormal];
+    }
     
-    reset = false;
-    
-    startTime = [NSDate timeIntervalSinceReferenceDate];
-    
-    timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(renderRunningTime) userInfo:NULL repeats:YES];
     
 }
+
+- (void)stopTimer {
+    if (reset == false){
+        [timer invalidate];
+        [self renderRunningTime];
+        accumTime += elapsedTime;
+        running = false;
+    } else {
+        [self renderLabel];
+        running = false;
+    }
+}
+
+
+- (void)startTimer {
+    
+    reset = false;
+    startTime = [NSDate timeIntervalSinceReferenceDate];
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(renderRunningTime) userInfo:NULL repeats:YES];
+    running =  true;
+}
+
 
 - (IBAction)resetCount:(id)sender {
     
@@ -57,19 +82,10 @@
     
     [self renderLabel];
     reset = true;
+    running = false;
     
 }
 
-- (IBAction)stopCount:(id)sender {
-    if (reset == false){
-        [timer invalidate];
-        [self renderRunningTime];
-        accumTime += elapsedTime;
-        
-    } else {
-        [self renderLabel];
-    }
-}
 
 
 - (void)renderRunningTime {

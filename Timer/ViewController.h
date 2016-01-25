@@ -10,11 +10,8 @@
 
 @interface ViewController : UIViewController {
 
-    BOOL reset;
-    int hundredth;
-    int second;
-    int minute;
-    int hour;
+    BOOL reset, running;
+    int hundredth, second, minute, hour;
     NSTimeInterval startTime, currentTime, elapsedTime,
         accumTime;
     NSTimer *timer;
@@ -27,7 +24,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *Label;
 - (IBAction)resetCount:(id)sender;
-- (IBAction)stopCount:(id)sender;
+
 
 - (IBAction)startCount:(id)sender;
 

@@ -64,16 +64,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wV-E2-a4e">
-                                <rect key="frame" x="20" y="431" width="335" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Stop">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="stopCount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HgG-ZM-tut"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="345-Ix-Z36">
                                 <rect key="frame" x="20" y="122" width="335" height="130"/>
                                 <constraints>
@@ -95,13 +85,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7wV-E2-a4e" firstAttribute="top" secondItem="ze1-0k-Cqi" secondAttribute="bottom" constant="26" id="4BF-uN-KLZ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="b2p-OH-kVD" secondAttribute="bottom" constant="524" id="8Dj-64-9jE"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7wV-E2-a4e" secondAttribute="trailing" id="BEM-7n-tKV"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aQg-PT-cJJ" secondAttribute="bottom" constant="20" id="BYf-CS-RsL"/>
                             <constraint firstItem="345-Ix-Z36" firstAttribute="top" secondItem="b2p-OH-kVD" secondAttribute="bottom" constant="-21" id="CpH-4G-Fbh"/>
                             <constraint firstAttribute="leadingMargin" secondItem="ze1-0k-Cqi" secondAttribute="leading" id="EiI-xR-BHl"/>
-                            <constraint firstItem="7wV-E2-a4e" firstAttribute="top" secondItem="2EK-Yk-Ecy" secondAttribute="bottom" constant="46" id="Eod-it-jOV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZgO-XR-Rr2" secondAttribute="trailing" id="JLo-Jh-4ad"/>
                             <constraint firstItem="aQg-PT-cJJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="120" id="KBI-HW-Cdv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ze1-0k-Cqi" secondAttribute="trailing" id="KxI-kt-XmC"/>
@@ -111,15 +98,12 @@
                             <constraint firstAttribute="leadingMargin" secondItem="2EK-Yk-Ecy" secondAttribute="leading" id="Rpv-u6-8RR"/>
                             <constraint firstAttribute="leadingMargin" secondItem="ZgO-XR-Rr2" secondAttribute="leading" id="Ur7-iO-pun"/>
                             <constraint firstAttribute="leadingMargin" secondItem="b2p-OH-kVD" secondAttribute="leading" id="VdT-uV-M07"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="7wV-E2-a4e" secondAttribute="leading" id="Xo3-FW-44V"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aQg-PT-cJJ" secondAttribute="trailing" constant="121" id="bkx-Yq-yJp"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="345-Ix-Z36" secondAttribute="bottom" constant="415" id="dhb-01-lfZ"/>
                             <constraint firstItem="ze1-0k-Cqi" firstAttribute="top" secondItem="2EK-Yk-Ecy" secondAttribute="bottom" constant="30" id="jC0-hy-Y5l"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2EK-Yk-Ecy" secondAttribute="trailing" id="jN6-KR-ymG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="b2p-OH-kVD" secondAttribute="trailing" id="jyp-bi-rdp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="345-Ix-Z36" secondAttribute="trailing" id="lTL-cE-773"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7wV-E2-a4e" secondAttribute="bottom" constant="206" id="mGT-L1-yji"/>
-                            <constraint firstItem="ZgO-XR-Rr2" firstAttribute="top" secondItem="7wV-E2-a4e" secondAttribute="bottom" constant="30" id="n5P-Cs-Kkh"/>
                             <constraint firstItem="ze1-0k-Cqi" firstAttribute="width" secondItem="ze1-0k-Cqi" secondAttribute="height" multiplier="67:6" id="qx2-T5-4Dt"/>
                             <constraint firstItem="2EK-Yk-Ecy" firstAttribute="top" secondItem="345-Ix-Z36" secondAttribute="bottom" constant="45" id="rBx-Q4-vvZ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ze1-0k-Cqi" secondAttribute="bottom" constant="262" id="rUC-XK-dmA"/>
