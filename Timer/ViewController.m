@@ -39,10 +39,10 @@
 }
 
 - (IBAction)startCount:(UIButton *)sender {
-    if (running == true) {
+    if (running) {
         [self stopTimer];
         [sender setTitle:@"Start" forState:UIControlStateNormal];
-    } else if (running == false && reset == true){
+    } else if (!running && reset){
         [sender setTitle:@"Start" forState:UIControlStateNormal];
         reset = false;
     } else {
