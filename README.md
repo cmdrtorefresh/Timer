@@ -5,6 +5,7 @@ Jan 24 2016 :
 - Consolidate Start/Stop Button (delete the Stop button) to startCount button only, fix the reset method so that the startCount Button reads "Start" after reset is clicked when timer runs.
 - Clean up conditionals in the startCount Button.
 - Clean up the stopTimer method.
+Youtube : https://youtu.be/Ccio0Bi3VoM
 
 
 Jan 23 2016 :
