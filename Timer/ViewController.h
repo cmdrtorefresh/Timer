@@ -19,7 +19,6 @@
 }
 @property (weak, nonatomic) IBOutlet UILabel *CartoonTitle;
 
-@property (weak, nonatomic) IBOutlet UILabel *TimerTitle;
 @property (weak, nonatomic) IBOutlet UILabel *FastCount;
 
 @property (weak, nonatomic) IBOutlet UILabel *Label;

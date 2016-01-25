@@ -20,8 +20,6 @@
     
     self.CartoonTitle.font = [UIFont fontWithName:@"From Cartoon Blocks" size:100];
     
-    self.TimerTitle.font = [UIFont fontWithName:@"From Cartoon Blocks" size:100];
-    
     self.Label.font = [UIFont fontWithName:@"From Cartoon Blocks" size:63];
     
     self.Label.textColor = [UIColor redColor];
