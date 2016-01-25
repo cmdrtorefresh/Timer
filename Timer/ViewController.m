@@ -66,15 +66,10 @@
 
 
 - (void)stopTimer {
-    if (reset == false){
-        [timer invalidate];
-        [self renderRunningTime];
-        accumTime += elapsedTime;
-        running = false;
-    } else {
-        [self renderLabel];
-        running = false;
-    }
+    [timer invalidate];
+    [self renderRunningTime];
+    accumTime += elapsedTime;
+    running = false;
 }
 
 
