@@ -38,7 +38,7 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="resetCount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lhl-h7-LQG"/>
+                                    <action selector="resetCount:" destination="BYZ-38-t0r" eventType="touchDown" id="lHL-Ye-6xZ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgO-XR-Rr2">
@@ -69,7 +69,7 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="startCount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zZd-MM-k4e"/>
+                                    <action selector="startCount:" destination="BYZ-38-t0r" eventType="touchDown" id="reM-Vt-2hQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -97,6 +97,7 @@
                         <outlet property="CartoonTitle" destination="b2p-OH-kVD" id="MLA-QP-PTM"/>
                         <outlet property="FastCount" destination="aQg-PT-cJJ" id="Qwq-hF-cv8"/>
                         <outlet property="Label" destination="ZgO-XR-Rr2" id="POE-dh-Y7A"/>
+                        <outlet property="startButton" destination="ze1-0k-Cqi" id="2El-ZJ-WE5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -28,7 +28,7 @@
     
     accumTime = 0;
     
-    reset = true;
+    reset = false;
     
     running = false;
 }
@@ -38,17 +38,32 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)startCount:(id)sender {
+- (IBAction)startCount:(UIButton *)sender {
     if (running == true) {
         [self stopTimer];
         [sender setTitle:@"Start" forState:UIControlStateNormal];
+    } else if (running == false && reset == true){
+        [sender setTitle:@"Start" forState:UIControlStateNormal];
+        reset = false;
     } else {
         [self startTimer];
         [sender setTitle:@"Stop" forState:UIControlStateNormal];
     }
+}
+
+
+- (IBAction)resetCount:(UIButton *)sender {
+    [timer invalidate];
+    elapsedTime = 0;
+    accumTime = 0;
     
+    [self renderLabel];
+    reset = true;
+    running = false;
+    [self startCount:self.startButton];
     
 }
+
 
 - (void)stopTimer {
     if (reset == false){
@@ -64,26 +79,11 @@
 
 
 - (void)startTimer {
-    
     reset = false;
     startTime = [NSDate timeIntervalSinceReferenceDate];
     timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(renderRunningTime) userInfo:NULL repeats:YES];
     running =  true;
 }
-
-
-- (IBAction)resetCount:(id)sender {
-    
-    [timer invalidate];
-    elapsedTime = 0;
-    accumTime = 0;
-    
-    [self renderLabel];
-    reset = true;
-    running = false;
-    
-}
-
 
 
 - (void)renderRunningTime {

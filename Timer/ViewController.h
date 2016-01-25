@@ -22,10 +22,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *FastCount;
 
 @property (weak, nonatomic) IBOutlet UILabel *Label;
-- (IBAction)resetCount:(id)sender;
+- (IBAction)resetCount:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
 
 
-- (IBAction)startCount:(id)sender;
+- (IBAction)startCount:(UIButton *)sender;
 
 @end
 
